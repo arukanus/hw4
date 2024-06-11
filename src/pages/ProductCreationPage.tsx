@@ -16,7 +16,7 @@ const ProductCreationPage: React.FC = () => {
     onSuccess: (newProduct) => {
       console.log('Product created successfully:', newProduct);
 
-      // Manually update the local state with the new product
+    
       addProduct(newProduct);
     },
     onError: (error: any) => {
@@ -27,7 +27,7 @@ const ProductCreationPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null); // Reset error state
+    setError(null); 
     let fileUrls: string[] = [];
 
     try {
@@ -35,14 +35,14 @@ const ProductCreationPage: React.FC = () => {
         const url = await uploadFile(file);
         fileUrls.push(url);
       }
-      console.log('File URLs:', fileUrls); // Debugging log
+      console.log('File URLs:', fileUrls);
     } catch (error) {
       setError('Failed to upload files. Please try again.');
       return;
     }
 
-    const productData = { title, description, price, image: fileUrls[0] }; // Adjust data structure
-    console.log('Creating product with data:', productData); // Debugging log
+    const productData = { title, description, price, image: fileUrls[0] }; 
+    console.log('Creating product with data:', productData); 
 
     mutation.mutate(productData);
   };
