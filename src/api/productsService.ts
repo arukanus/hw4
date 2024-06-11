@@ -4,7 +4,7 @@ export const fetchProducts = async () => {
   const response = await axiosInstance.get('/products');
   const apiProducts = response.data;
 
-  // Retrieve locally stored products
+
   const localProducts = JSON.parse(localStorage.getItem('localProducts') || '[]');
   console.log('Fetched products:', [...apiProducts, ...localProducts]); // Debugging log
 
@@ -13,7 +13,7 @@ export const fetchProducts = async () => {
 
 export const createProduct = async (productData: any) => {
   if (productData.images && productData.images.length > 0) {
-    productData.image = productData.images[0]; // Use only the first image
+    productData.image = productData.images[0]; 
     delete productData.images;
   }
 
