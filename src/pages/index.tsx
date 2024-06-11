@@ -1,4 +1,4 @@
-// src/pages/index.tsx
+
 import React from 'react';
 import ProductsList from '../components/ProductsList';
 import Layout from '../components/Layout';
