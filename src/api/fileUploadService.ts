@@ -11,7 +11,7 @@ export const uploadFile = async (file: File): Promise<string> => {
       },
     });
     console.log('File uploaded:', response.data.location); // Debugging log
-    return response.data.location; // Assuming the response contains the file URL in 'location'
+    return response.data.location; 
   } catch (error) {
     console.error('Error uploading file:', error);
     throw error;
