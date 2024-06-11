@@ -1,4 +1,4 @@
-// src/pages/create-product.tsx
+
 import React from 'react';
 import ProductCreationPage from '../pages/ProductCreationPage';
 import Layout from '../components/Layout';
